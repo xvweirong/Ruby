@@ -4,6 +4,6 @@ require 'sinatra'
 $hits = 0
 
 get '/' do
-  $hits = $hits + 1
+  $hits = $redis.incr('hits')
   "Hello Cloud Foundry - #{$hits}"
 end
