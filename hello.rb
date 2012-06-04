@@ -1,4 +1,9 @@
+require 'rubygems'
 require 'sinatra'
+
+$hits = 0
+
 get '/' do
-  "Hello from Cloud Foundry & David"
+  $hits = $hits + 1
+  "Hello Cloud Foundry - #{$hits}"
 end
